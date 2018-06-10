@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/scrollView"
+    tools:context=".MainActivity">
+
+    <!--overall-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#245af73e"
+        android:layout_marginBottom="10dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/title"
+            android:textSize="45sp"
+            android:fontFamily="@font/playball"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <!--question 1-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question1"
+                    android:textColor="@color/primary_text"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/button_1a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="@string/answer1a"
+                        android:textColor="@color/secondary_text" />
+
+                    <RadioButton
+                        android:id="@+id/button_1b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="@string/answer1b"
+                        android:textColor="@color/secondary_text" />
+
+                    <RadioButton
+                        android:id="@+id/button_1c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="@string/answer1c"
+                        android:textColor="@color/secondary_text" />
+
+                    <RadioButton
+                        android:id="@+id/button_1d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="@string/answer1d"
+                        android:textColor="@color/secondary_text" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/answer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry"
+                    android:textStyle="italic"
+                    android:textColor="@color/primary_text"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--end of question 1-->
+
+        <!--question 2-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question2"
+                    android:textColor="@color/primary_text"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/button_2a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="@string/answer2a"
+                        android:textColor="@color/secondary_text" />
+
+                    <RadioButton
+                        android:id="@+id/button_2b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer2b"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_2c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer2c"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_2d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer2d"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/answer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry"
+                    android:textStyle="italic"
+                    android:textColor="@color/primary_text"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--end of question 2-->
+
+        <!--question 3-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question3"
+                    android:textColor="@color/primary_text"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/button_3a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer3a"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_3b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer3b"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_3c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer3c"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_3d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer3d"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/answer3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry"
+                    android:textStyle="italic"
+                    android:textColor="@color/primary_text"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--end of question 3-->
+
+        <!--question 4-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question4"
+                    android:textColor="@color/primary_text"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/button_4a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer4a"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_4b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer4b"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_4c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer4c"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/button_4d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:onClick="onRadioButtonClicked"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer4d"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/answer4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry"
+                    android:textStyle="italic"
+                    android:textColor="@color/primary_text"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--end of question 4-->
+
+        <!--question 5-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question5"
+                    android:textColor="@color/primary_text"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <CheckBox
+                        android:id="@+id/checkbox_5a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer5a"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry"
+                        android:onClick="onCheckboxClicked"/>
+
+                    <CheckBox
+                        android:id="@+id/checkbox_5b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer5b"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry"
+                        android:onClick="onCheckboxClicked"/>
+
+                    <CheckBox
+                        android:id="@+id/checkbox_5c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer5c"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry"
+                        android:onClick="onCheckboxClicked"/>
+
+                    <CheckBox
+                        android:id="@+id/checkbox_5d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/answer5d"
+                        android:textColor="@color/secondary_text"
+                        tools:ignore="RtlSymmetry"
+                        android:onClick="onCheckboxClicked"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/answer5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry"
+                    android:textStyle="italic"
+                    android:textColor="@color/primary_text"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--end of question 5-->
+
+        <!--question 6-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question6"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp" />
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/answer6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry"
+                    android:textStyle="italic"
+                    android:textColor="@color/primary_text"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--end of question 6-->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@android:color/transparent">
+
+            <TextView
+                android:id="@+id/results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="submitButton"
+                android:text="@string/submit"
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
+                android:textSize="17sp"
+                android:background="@drawable/state_enabled"/>
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="nextPage"
+                android:text="@string/next"
+                android:visibility="gone"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/button_style"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--end of overall-->
+</ScrollView>

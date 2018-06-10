@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+
+    <string name="title">Quiz 1</string>
+
+    <string name="question1">1.How many countries are in Africa?</string>
+    <string name="answer1a">59</string>
+    <string name="answer1b">51</string>
+    <string name="answer1c">54</string>
+    <string name="answer1d">56</string>
+
+    <string name="question2">2.What is the capital city of Kenya?</string>
+    <string name="answer2a">Nairobi</string>
+    <string name="answer2b">Mombasa</string>
+    <string name="answer2c">Kampala</string>
+    <string name="answer2d">Addis Ababa</string>
+
+    <string name="question3">3.Which is the highest mountain in Africa?</string>
+    <string name="answer3a">Mt.Longonot</string>
+    <string name="answer3b">Mt.Kilimanjaro</string>
+    <string name="answer3c">Mt.Kenya</string>
+    <string name="answer3d">Mt.Kilimambogo</string>
+
+    <string name="question4">4.Which country has the highest population in Africa?</string>
+    <string name="answer4a">South Africa</string>
+    <string name="answer4b">Nigeria</string>
+    <string name="answer4c">Sudan</string>
+    <string name="answer4d">D.R.Congo</string>
+
+    <string name="question5">5.Which of these countries have female presidents?</string>
+    <string name="answer5a">Germany</string>
+    <string name="answer5b">Argentina</string>
+    <string name="answer5c">Australia</string>
+    <string name="answer5d">Mauritius</string>
+
+    <string name="question6">6.In which country will the 2018 FIFA world cup be held?</string>
+
+    <string name="submit">Submit</string>
+    <string name="next">Next</string>
+    <string name="results">Your total score is %1$d</string>
+
+    <string name="ans1">The correct answer is 54</string>
+    <string name="ans2">The correct answer is Nairobi</string>
+    <string name="ans3">The correct answer is Mt.Kilimanjaro</string>
+    <string name="ans4">The correct answer is Nigeria</string>
+    <string name="ans5">The correct answers are Argentina and Mauritius</string>
+    <string name="ans5alt1">The correct answers are both Argentina and Mauritius</string>
+    <string name="ans5alt2">The correct answers are Argentina and Mauritius only</string>
+    <string name="ans6">The correct answer is Russia</string>
+
+    <string name="page2">Nothing to show yet!</string>
+
+</resources>
