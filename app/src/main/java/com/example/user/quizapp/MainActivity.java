@@ -1,11 +1,16 @@
 package com.example.user.quizapp;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -39,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     score = 0;
                 break;
 
-            case R.id.button_1c:
+            case R.id.button_1c: //right answer
                 if (checked)
                 score += 1;
                 break;
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 //end of question 1
 
             //question 2
-            case R.id.button_2a:
+            case R.id.button_2a: //right answer
                 if (checked)
                     score2 += 1;
                 break;
@@ -78,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     score3 += 0;
                 break;
 
-            case R.id.button_3b:
+            case R.id.button_3b: //right answer
                 if (checked)
                     score3 = 1;
                 break;
@@ -100,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     score4 += 0;
                 break;
 
-            case R.id.button_4b:
+            case R.id.button_4b: //right answer
                 if (checked)
                     score4 = 1;
                 break;
@@ -119,23 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCheckboxClicked(View view){
-        switch (view.getId()){
-            case R.id.checkbox_5a:
-                doubleCheckedboxes();
-                break;
-
-            case R.id.checkbox_5b:
-                doubleCheckedboxes();
-                break;
-
-            case R.id.checkbox_5c:
-                doubleCheckedboxes();
-                break;
-
-            case R.id.checkbox_5d:
-                doubleCheckedboxes();
-                break;
-        }
+        doubleCheckedboxes();
     }
 
     private void doubleCheckedboxes(){
@@ -400,35 +389,70 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Question 6 not answered", Toast.LENGTH_SHORT).show();
         }
         else {
-            //if at least one RadioButton & checkbox is checked and the editText not empty
-            question1code();
-            question2code();
-            question3code();
-            question4code();
-            question5code();
-            question6code();
-
-            int totalScore = score + score2 + score3 + score4 + score5 + score6;
-            //Toasts
-            if (totalScore <= 2){
-                Toast.makeText(this, "Ooops!", Toast.LENGTH_SHORT).show();
-            }else if (totalScore == 3){
-                Toast.makeText(this, "Good Job!", Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(this, "Excellent Job!", Toast.LENGTH_SHORT).show();
-            }
-
-            //TextView
-            TextView results = findViewById(R.id.results);
-            results.setText(getResources().getString(R.string.results, totalScore));
-            results.setVisibility(View.VISIBLE);
-
-            //Buttons
-            Button next = findViewById(R.id.next_button);
-            next.setVisibility(View.VISIBLE);
-            Button submit = findViewById(R.id.submit_button);
-            submit.setEnabled(false);
+            //An alertDialog appears
+            myAlertDialog();
         }
+    }
+
+    private void myAlertDialog(){
+        final AlertDialog.Builder builder; //= new AlertDialog.Builder(MainActivity.this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            builder = new AlertDialog.Builder(MainActivity.this, android.R.style.Theme_Material_Light_Dialog_Alert);
+        }else {
+            builder = new AlertDialog.Builder(MainActivity.this);
+        }
+
+        builder.setMessage(R.string.message);
+        builder.setCancelable(false);
+                    //Adding buttons
+        //proceed button
+        builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if at least one RadioButton & checkbox is checked and the editText not empty
+                question1code();
+                question2code();
+                question3code();
+                question4code();
+                question5code();
+                question6code();
+
+                int totalScore = score + score2 + score3 + score4 + score5 + score6;
+                //Toasts
+                if (totalScore <= 2){
+                    Toast.makeText(MainActivity.this, "Ooops! You've scored " + totalScore + "/6", Toast.LENGTH_SHORT).show();
+                }else if (totalScore == 3){
+                    Toast.makeText(MainActivity.this, "Good Job! You've scored " + totalScore + "/6", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(MainActivity.this, "Excellent Job! You've scored " + totalScore + "/6", Toast.LENGTH_SHORT).show();
+                }
+
+                //TextView
+                TextView results = findViewById(R.id.results);
+                results.setText(getResources().getString(R.string.results, totalScore));
+                results.setVisibility(View.VISIBLE);
+
+                //Buttons
+                Button next = findViewById(R.id.next_button);
+                next.setVisibility(View.VISIBLE);
+                Button submit = findViewById(R.id.submit_button);
+                submit.setEnabled(false);
+                //dialog.dismiss();
+            }
+        });
+
+        //Go back to quiz button
+        builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //dialog.dismiss();
+            }
+        });
+        AlertDialog al = builder.create();
+        //to remove the undesirable spacing at top of the material design alertDialog
+        al.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        al.show();
     }
 
     public void nextPage(View view){

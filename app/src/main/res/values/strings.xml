@@ -37,7 +37,7 @@
 
     <string name="submit">Submit</string>
     <string name="next">Next</string>
-    <string name="results">Your total score is %1$d</string>
+    <string name="results">Your total score is %1$d out of 6</string>
 
     <string name="ans1">The correct answer is 54</string>
     <string name="ans2">The correct answer is Nairobi</string>
@@ -49,5 +49,10 @@
     <string name="ans6">The correct answer is Russia</string>
 
     <string name="page2">Nothing to show yet!</string>
+
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="DialogTitle">Confirmation</string>
+    <string name="message">Are you sure you want to submit your answers?</string>
 
 </resources>
